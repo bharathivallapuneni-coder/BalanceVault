@@ -1,0 +1,6 @@
+{
+  "name": "BalanceVault",
+  "description": "Secure financial account management, onboarding workflows, administrative control, and audit trail platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
