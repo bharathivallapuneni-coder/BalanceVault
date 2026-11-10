@@ -1,10 +1,10 @@
-import { Router, Request, Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import bcrypt from 'bcryptjs';
-import { db } from '../db.js';
-import { isRateLimiterHealthy } from '../rateLimiter.js';
-import { logAudit } from '../audit.js';
+import { db } from '../db.ts';
+import { isRateLimiterHealthy } from '../rateLimiter.ts';
+import { logAudit } from '../audit.ts';
 
-const router = Router();
+const router = express.Router();
 
 // Health Check
 router.get('/health', (req: Request, res: Response) => {

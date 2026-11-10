@@ -1,12 +1,12 @@
-import { Router, Request, Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
-import { db } from '../db.js';
-import { authenticate, generateToken, AuthenticatedRequest } from '../auth.js';
-import { rateLimiter } from '../rateLimiter.js';
-import { logAudit } from '../audit.js';
+import { db } from '../db.ts';
+import { authenticate, generateToken, type AuthenticatedRequest } from '../auth.ts';
+import { rateLimiter } from '../rateLimiter.ts';
+import { logAudit } from '../audit.ts';
 
-const router = Router();
+const router = express.Router();
 
 const registerSchema = z
   .object({

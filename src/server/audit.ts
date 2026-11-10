@@ -1,5 +1,5 @@
-import { Request } from 'express';
-import { db } from './db.js';
+import type { Request } from 'express';
+import { db } from './db.ts';
 
 export interface AuditParams {
   req?: Request;

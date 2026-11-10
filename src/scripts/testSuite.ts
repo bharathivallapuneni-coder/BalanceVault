@@ -1,6 +1,7 @@
 import http from 'http';
 
-const BASE_URL = process.env.TEST_API_URL || 'http://localhost:3000/api';
+const port = process.env.PORT || '3000';
+const BASE_URL = process.env.TEST_API_URL || `http://localhost:${port}/api`;
 
 function request(path: string, options: any = {}, body: any = null): Promise<{ status: number; data: any; headers: any }> {
   return new Promise((resolve, reject) => {

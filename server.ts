@@ -1,10 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { type Request, type Response, type NextFunction } from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
-import authRoutes from './src/server/routes/auth.js';
-import userRoutes from './src/server/routes/users.js';
-import adminRoutes from './src/server/routes/admin.js';
-import healthRoutes from './src/server/routes/health.js';
+import authRoutes from './src/server/routes/auth.ts';
+import userRoutes from './src/server/routes/users.ts';
+import adminRoutes from './src/server/routes/admin.ts';
+import healthRoutes from './src/server/routes/health.ts';
 
 dotenv.config();
 

@@ -1,9 +1,9 @@
-import { Router, Response } from 'express';
-import { db, UserStatus } from '../db.js';
-import { authenticate, requireRole, AuthenticatedRequest } from '../auth.js';
-import { logAudit } from '../audit.js';
+import express, { type Response } from 'express';
+import { db, type UserStatus } from '../db.ts';
+import { authenticate, requireRole, type AuthenticatedRequest } from '../auth.ts';
+import { logAudit } from '../audit.ts';
 
-const router = Router();
+const router = express.Router();
 
 // Strictly enforce Admin RBAC for every route in this router
 router.use(authenticate);

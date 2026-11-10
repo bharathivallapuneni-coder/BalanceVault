@@ -1,12 +1,12 @@
-import { Router, Response } from 'express';
+import express, { type Response } from 'express';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
-import { db, IdType } from '../db.js';
-import { authenticate, AuthenticatedRequest } from '../auth.js';
-import { rateLimiter } from '../rateLimiter.js';
-import { logAudit } from '../audit.js';
+import { db, type IdType } from '../db.ts';
+import { authenticate, type AuthenticatedRequest } from '../auth.ts';
+import { rateLimiter } from '../rateLimiter.ts';
+import { logAudit } from '../audit.ts';
 
-const router = Router();
+const router = express.Router();
 
 // Protect all routes with authentication
 router.use(authenticate);

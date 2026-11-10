@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { db, User, Role } from './db.js';
+import { db, type User, type Role } from './db.ts';
 
 export const JWT_SECRET = process.env.JWT_SECRET || 'balancevault_master_jwt_secret_key_2026';
 
