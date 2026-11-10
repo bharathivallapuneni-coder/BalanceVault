@@ -13,6 +13,7 @@
     "test:integration": "tsx src/scripts/testSuite.ts"
   },
   "dependencies": {
+    "@google/genai": "^3.0.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.10",
