@@ -65,6 +65,17 @@
       "id": "usr_1794322099227_zaroi",
       "createdAt": "2026-11-10T14:48:19.227Z",
       "updatedAt": "2026-11-10T14:48:19.227Z"
+    },
+    {
+      "fullName": "Integration Test User",
+      "email": "testuser_1794323880650@example.com",
+      "phone": "+1 (555) 019-9921",
+      "passwordHash": "$2b$10$oPh/TDNP2VOLrWydX9q/QuMdVd0q7BOeSvddHq7y9Q5Y6niXWLnJm",
+      "role": "ACCOUNT_HOLDER",
+      "status": "ACTIVE",
+      "id": "usr_1794323880809_zdg1h",
+      "createdAt": "2026-11-10T15:18:00.809Z",
+      "updatedAt": "2026-11-10T15:18:00.809Z"
     }
   ],
   "accounts": [
@@ -112,6 +123,15 @@
       "id": "acc_1794322099227_bt5vn",
       "createdAt": "2026-11-10T14:48:19.227Z",
       "updatedAt": "2026-11-10T14:48:19.484Z"
+    },
+    {
+      "accountReference": "BV-880809-3111",
+      "userId": "usr_1794323880809_zdg1h",
+      "accountType": "STANDARD_CHECKING",
+      "status": "ACTIVE",
+      "id": "acc_1794323880809_piwmv",
+      "createdAt": "2026-11-10T15:18:00.809Z",
+      "updatedAt": "2026-11-10T15:18:01.097Z"
     }
   ],
   "onboarding": [
@@ -189,9 +209,116 @@
       "reviewedAt": "2026-11-10T14:48:19.484Z",
       "createdAt": "2026-11-10T14:48:19.228Z",
       "updatedAt": "2026-11-10T14:48:19.484Z"
+    },
+    {
+      "id": "onb_1794323880810_kqifm",
+      "userId": "usr_1794323880809_zdg1h",
+      "residentialAddress": "888 Enterprise Way, Suite 100",
+      "dateOfBirth": "1992-06-20",
+      "identificationType": "PASSPORT",
+      "identificationNumber": "PASS-78901234",
+      "status": "APPROVED",
+      "rejectionReason": null,
+      "reviewedBy": "admin@balancevault.internal",
+      "submittedAt": "2026-11-10T15:18:00.959Z",
+      "reviewedAt": "2026-11-10T15:18:01.097Z",
+      "createdAt": "2026-11-10T15:18:00.810Z",
+      "updatedAt": "2026-11-10T15:18:01.097Z"
     }
   ],
   "auditLogs": [
+    {
+      "actorId": "usr_admin_001",
+      "actorEmail": "admin@balancevault.internal",
+      "action": "ONBOARDING_APPROVED",
+      "targetType": "ONBOARDING",
+      "targetId": "onb_1794323880810_kqifm",
+      "result": "SUCCESS",
+      "metadata": {
+        "applicantUserId": "usr_1794323880809_zdg1h"
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323881098_yes6c",
+      "createdAt": "2026-11-10T15:18:01.098Z"
+    },
+    {
+      "actorId": "usr_admin_001",
+      "actorEmail": "admin@balancevault.internal",
+      "action": "USER_LOGIN_SUCCESS",
+      "targetType": "AUTH",
+      "targetId": "usr_admin_001",
+      "result": "SUCCESS",
+      "metadata": {
+        "role": "ADMIN"
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323881070_84npm",
+      "createdAt": "2026-11-10T15:18:01.070Z"
+    },
+    {
+      "actorId": "usr_1794323880809_zdg1h",
+      "actorEmail": "testuser_1794323880650@example.com",
+      "action": "ONBOARDING_SUBMITTED",
+      "targetType": "ONBOARDING",
+      "targetId": "onb_1794323880810_kqifm",
+      "result": "SUCCESS",
+      "metadata": {
+        "identificationType": "PASSPORT",
+        "isResubmission": false
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323880959_6kpw7",
+      "createdAt": "2026-11-10T15:18:00.959Z"
+    },
+    {
+      "actorId": "usr_1794323880809_zdg1h",
+      "actorEmail": "testuser_1794323880650@example.com",
+      "action": "USER_LOGIN_SUCCESS",
+      "targetType": "AUTH",
+      "targetId": "usr_1794323880809_zdg1h",
+      "result": "SUCCESS",
+      "metadata": {
+        "role": "ACCOUNT_HOLDER"
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323880948_s8n2h",
+      "createdAt": "2026-11-10T15:18:00.948Z"
+    },
+    {
+      "actorId": null,
+      "actorEmail": "testuser_1794323880650@example.com",
+      "action": "USER_REGISTRATION_FAILED",
+      "targetType": "USER",
+      "targetId": null,
+      "result": "FAILURE",
+      "metadata": {
+        "reason": "Email already registered"
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323880817_w2u4l",
+      "createdAt": "2026-11-10T15:18:00.817Z"
+    },
+    {
+      "actorId": "usr_1794323880809_zdg1h",
+      "actorEmail": "testuser_1794323880650@example.com",
+      "action": "USER_REGISTERED",
+      "targetType": "USER",
+      "targetId": "usr_1794323880809_zdg1h",
+      "result": "SUCCESS",
+      "metadata": {
+        "role": "ACCOUNT_HOLDER",
+        "accountRef": "BV-880809-3111"
+      },
+      "ipAddress": "127.0.0.1",
+      "userAgent": "unknown",
+      "id": "aud_1794323880811_1mrwn",
+      "createdAt": "2026-11-10T15:18:00.811Z"
+    },
     {
       "actorId": "usr_admin_001",
       "actorEmail": "admin@balancevault.internal",
@@ -530,6 +657,30 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif_1794323881098_mneb6",
+      "userId": "usr_1794323880809_zdg1h",
+      "title": "Onboarding Approved!",
+      "message": "Congratulations! Your identification documents have been verified and approved. Your financial account reference is now ACTIVE.",
+      "isRead": false,
+      "createdAt": "2026-11-10T15:18:01.098Z"
+    },
+    {
+      "id": "notif_1794323880959_4uzrc",
+      "userId": "usr_1794323880809_zdg1h",
+      "title": "Onboarding Submitted",
+      "message": "Your identity documents have been submitted and queued for administrator compliance review.",
+      "isRead": false,
+      "createdAt": "2026-11-10T15:18:00.959Z"
+    },
+    {
+      "id": "notif_1794323880810_co9lm",
+      "userId": "usr_1794323880809_zdg1h",
+      "title": "Welcome to BalanceVault!",
+      "message": "Your account profile has been created with Reference #BV-880809-3111. Please submit your identity verification documents to finalize onboarding.",
+      "isRead": false,
+      "createdAt": "2026-11-10T15:18:00.810Z"
+    },
     {
       "id": "notif_1794322099485_ipnxg",
       "userId": "usr_1794322099227_zaroi",
