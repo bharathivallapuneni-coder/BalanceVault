@@ -8,8 +8,6 @@ import {
   AlertCircle,
   Eye,
   EyeOff,
-  ShieldCheck,
-  Sparkles,
   ArrowRight,
 } from 'lucide-react';
 
@@ -43,12 +41,6 @@ export const LoginPage: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleFillDemo = (demoEmail: string, demoPass: string) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setError('');
   };
 
   return (
@@ -129,31 +121,6 @@ export const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          {/* 1-Click Quick Demo Credentials Pill Selectors */}
-          <div className="mt-6 pt-5 border-t border-slate-100">
-            <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>Fill Quick Demo Role:</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-xs">
-              <button
-                type="button"
-                onClick={() => handleFillDemo('admin@balancevault.internal', 'VaultAdmin@2026!')}
-                className="px-3 py-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-semibold text-left transition"
-              >
-                <div className="text-[11px] font-bold text-[#173B75]">Admin Demo</div>
-                <div className="text-[10px] text-slate-400 truncate">admin@balancevault.internal</div>
-              </button>
-              <button
-                type="button"
-                onClick={() => handleFillDemo('sarah.jenkins@example.com', 'VaultClient@2026!')}
-                className="px-3 py-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-semibold text-left transition"
-              >
-                <div className="text-[11px] font-bold text-[#2563EB]">Client Demo</div>
-                <div className="text-[10px] text-slate-400 truncate">sarah.jenkins@example.com</div>
-              </button>
-            </div>
-          </div>
 
           <div className="mt-6 text-center text-xs text-slate-500">
             Need an account?{' '}
